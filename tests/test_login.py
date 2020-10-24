@@ -5,7 +5,11 @@ from pages.home_page import HomePage
 
 @mark.smoke
 class SmokeTest:
-    def test_main_page(self, chrome_browser, base_url):
+    def test_data_demo(self, test_data):
+        print(f"{test_data} is active now.")
+
+    @mark.skip(reason='Skipped by purpose')
+    def test_main_page(self, chrome_browser):
         home_page = HomePage(driver=chrome_browser)
         home_page.go()
         assert home_page.current_menu_item.text == 'ГЛАВНАЯ'
