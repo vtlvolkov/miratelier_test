@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 
 from pages.base_element import BaseElement
 from pages.base_page import BasePage
-from pages.locator import Locator
 
 
 class AboutPage(BasePage):

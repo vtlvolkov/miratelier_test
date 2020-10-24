@@ -1,12 +1,11 @@
 from pytest import mark
 
 from pages.home_page import HomePage
-from pages.about_page import AboutPage
 
 
 @mark.smoke
 class SmokeTest:
-    def test_main_page(self, chrome_browser):
+    def test_main_page(self, chrome_browser, base_url):
         home_page = HomePage(driver=chrome_browser)
         home_page.go()
         assert home_page.current_menu_item.text == 'ГЛАВНАЯ'
